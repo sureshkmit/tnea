@@ -23,21 +23,21 @@ public class HomeController {
     public ModelAndView index(ModelMap model) {
         model.addAttribute("communities", Community.values());
         model.addAttribute("branches", Branch.LIST);
-        return new ModelAndView("index", "command", new CollegeSearch(null, 5, "COMPUTER SCIENCE AND ENGG."));
+        return new ModelAndView("index", "command", new CollegeSearchRequest(null, 5, "COMPUTER SCIENCE AND ENGG."));
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView search(@ModelAttribute CollegeSearch collegeSearch, ModelMap model) {
-        System.out.println("collegeSearch = " + collegeSearch);
+    public ModelAndView search(@ModelAttribute CollegeSearchRequest collegeSearchRequest, ModelMap model) {
+        System.out.println("collegeSearchRequest = " + collegeSearchRequest);
 
         model.addAttribute("communities", Community.values());
         model.addAttribute("branches", Branch.LIST);
 
         SearchService searchService = new SearchService();
-        List<College> colleges = searchService.search(collegeSearch).collect(Collectors.toList());
+        List<College> colleges = searchService.search(collegeSearchRequest).collect(Collectors.toList());
         model.addAttribute("colleges", colleges);
 
-        return new ModelAndView("index", "command", collegeSearch);
+        return new ModelAndView("index", "command", collegeSearchRequest);
     }
 
 }

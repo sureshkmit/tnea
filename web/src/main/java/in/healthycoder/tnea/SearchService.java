@@ -9,7 +9,7 @@ import java.util.stream.Stream;
  * Created by Suresh_Karuppannan on 5/29/2016.
  */
 public class SearchService {
-    public Stream<College> search(CollegeSearch search) {
+    public Stream<College> search(CollegeSearchRequest search) {
         Community community = Community.getValue(search.getCommunity());
         System.out.println("community = " + community);
         System.out.println("CutoffManager.marks.size() = " + CutoffManager.marks.size());

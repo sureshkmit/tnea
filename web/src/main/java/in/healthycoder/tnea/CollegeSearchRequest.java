@@ -3,15 +3,15 @@ package in.healthycoder.tnea;
 /**
  * Created by Suresh_Karuppannan on 5/29/2016.
  */
-public class CollegeSearch {
+public class CollegeSearchRequest {
     private Double cutoff;
     private int community;
     private String branch;
 
-    public CollegeSearch() {
+    public CollegeSearchRequest() {
     }
 
-    public CollegeSearch(Double cutoff, int community, String branch) {
+    public CollegeSearchRequest(Double cutoff, int community, String branch) {
         this.cutoff = cutoff;
         this.community = community;
         this.branch = branch;
