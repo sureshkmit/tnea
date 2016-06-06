@@ -34,8 +34,8 @@ public class HomeController {
         model.addAttribute("branches", Branch.LIST);
 
         SearchService searchService = new SearchService();
-        List<College> colleges = searchService.search(collegeSearchRequest).collect(Collectors.toList());
-        model.addAttribute("colleges", colleges);
+        CollegeSearchResponse response = searchService.search(collegeSearchRequest);
+        model.addAttribute("result", response);
 
         return new ModelAndView("index", "command", collegeSearchRequest);
     }

@@ -54,8 +54,8 @@
 
     <br/>
 
-    <div class="row marketing">
-        <form:form class="form-horizontal" method="POST" action="/tnea/">
+    <div class="row marketing" style="margin-left: 5px; margin-right: 5px">
+        <form:form class="form-horizontal" method="POST" action="/">
             <div class="form-group">
                 <form:label path="cutoff" for="inputCutoff" class="col-sm-2 control-label">Cutoff</form:label>
                 <div class="col-sm-10">
@@ -84,7 +84,7 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" class="btn btn-default" value="Suggest some colleges"/>
+                    <input type="submit" class="btn btn-default" value="Find colleges"/>
                 </div>
             </div>
         </form:form>
@@ -95,7 +95,7 @@
         <div class="panel panel-primary">
             <!-- Default panel contents -->
             <div class="panel-heading"><h3 class="panel-title">Colleges you might be interested</h3> </div>
-            <c:if test="${empty colleges}">
+            <c:if test="${empty result.colleges}">
                 <div class="panel-body">
                     <p>No colleges found</p>
                 </div>
@@ -103,10 +103,10 @@
 
 
             <!-- List group -->
-            <c:if test="${not empty colleges}">
+            <c:if test="${not empty result.colleges}">
                 <ul class="list-group">
-                    <c:forEach var="listValue" items="${colleges}">
-                        <li class="list-group-item lead">${listValue.name}</li>
+                    <c:forEach var="listValue" items="${result.colleges}">
+                        <li class="list-group-item lead">${String.format("%6.2f%n", listValue.cutoff).replaceAll(" ", "&nbsp;")}&nbsp;&nbsp; ${listValue.name}</li>
                     </c:forEach>
                 </ul>
             </c:if>

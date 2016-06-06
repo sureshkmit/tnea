@@ -25,6 +25,12 @@ public class College {
         this.district = District.getValue(Integer.valueOf(split[0]));
     }
 
+    public College(College college) {
+        this.name = college.getName();
+        this.code = college.getCode();
+        this.district = college.getDistrict();
+    }
+
     public String getCode() {
         return code;
     }
