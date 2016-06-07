@@ -10,7 +10,7 @@
 
     <mvc:annotation-driven/>
     
-    <mvc:resources mapping="/static/**" location="static" />
+    <mvc:resources mapping="/static" location="static" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">

@@ -81,6 +81,6 @@
 
     </dependencies>
     <build>
-        <finalName>web</finalName>
+        <finalName>web-${tnea-project-version}</finalName>
     </build>
 </project>
