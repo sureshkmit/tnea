@@ -60,7 +60,7 @@
                 <form:label path="cutoff" for="inputCutoff" class="col-sm-2 control-label">Cutoff</form:label>
                 <div class="col-sm-10">
                     <form:input path="cutoff" type="number" class="form-control" id="inputCutoff" placeholder="194.0"
-                                autofocus="autofocus" required="required" min="1" max="200" step=".25"/>
+                                autofocus="autofocus" required="required" min="0" max="200" step=".25"/>
                 </div>
             </div>
 
