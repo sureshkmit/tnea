@@ -7,9 +7,7 @@
           <element id="module-output" name="web" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="model-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="model" />
-          </element>
+          <element id="library" level="project" name="Maven: in.healthycoder.tnea:model:1.1-SNAPSHOT" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.2.5.RELEASE" />
